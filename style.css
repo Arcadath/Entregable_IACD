@@ -89,10 +89,9 @@ body {
 
 
 main.container {
-  display: grid;
+  display: flex; /* Cambiado de grid a flex para manejar el fixed */
   gap: var(--gap);
   margin-top: 12px;
-  grid-template-columns: 360px 1fr;
   align-items: start;
 }
 
@@ -101,7 +100,26 @@ main.container {
   padding: 16px;
   border-radius: var(--radius);
   box-shadow: 0 1px 4px rgba(2, 6, 23, 0.06);
+  
+  /* --- Cambios para hacerlo fijo --- */
+  position: sticky; /* Usamos sticky en lugar de fixed para que se mantenga dentro del main y no se solape con el header/footer */
+  top: 12px; /* Espacio desde la parte superior del viewport */
+  width: 360px; /* Definir el ancho fijo, igual al del grid original */
+  max-height: calc(100vh - 24px); /* Limitar altura para que quepa en el viewport */
+  overflow-y: auto; /* Permitir scroll si el formulario es muy largo */
+  /* --------------------------------- */
 }
+
+#list-section {
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 4px rgba(2, 6, 23, 0.04);
+  /* --- Cambio para que la lista ocupe el espacio restante --- */
+  flex-grow: 1; 
+  /* -------------------------------------------------------- */
+}
+
 
 #form-section h2 {
   margin-top: 0;
@@ -137,12 +155,6 @@ form select:focus {
   margin-top: 8px
 }
 
-#list-section {
-  background: var(--card);
-  padding: 16px;
-  border-radius: var(--radius);
-  box-shadow: 0 1px 4px rgba(2, 6, 23, 0.04)
-}
 
 .list-controls {
   display: flex;
@@ -251,17 +263,24 @@ form select:focus {
   font-size: 0.9rem;
 }
 @media (max-width:900px) {
+  /* Restablecer el diseño original para dispositivos pequeños */
   main.container {
     grid-template-columns: 1fr;
+    display: grid; /* Volver a grid en móviles */
     padding-bottom: 32px
   }
 
   #form-section {
-    order: 2
+    order: 2;
+    position: static; /* Quitar sticky en móviles */
+    width: auto;
+    max-height: none;
+    overflow-y: visible;
   }
 
   #list-section {
-    order: 1
+    order: 1;
+    flex-grow: 0;
   }
 
   .list-controls {

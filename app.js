@@ -85,7 +85,6 @@ if (selectors.toggleFormBtn) {
   });
 }
 
-
 selectors.resetBtn.addEventListener('click', resetForm);
 selectors.search.addEventListener('input', applyFilters);
 selectors.filterCategory.addEventListener('change', applyFilters);
