@@ -89,7 +89,7 @@ body {
 
 
 main.container {
-  display: flex; /* Cambiado de grid a flex para manejar el fixed */
+  display: flex; 
   gap: var(--gap);
   margin-top: 12px;
   align-items: start;
@@ -100,14 +100,12 @@ main.container {
   padding: 16px;
   border-radius: var(--radius);
   box-shadow: 0 1px 4px rgba(2, 6, 23, 0.06);
-  
-  /* --- Cambios para hacerlo fijo --- */
-  position: sticky; /* Usamos sticky en lugar de fixed para que se mantenga dentro del main y no se solape con el header/footer */
-  top: 12px; /* Espacio desde la parte superior del viewport */
-  width: 360px; /* Definir el ancho fijo, igual al del grid original */
-  max-height: calc(100vh - 24px); /* Limitar altura para que quepa en el viewport */
-  overflow-y: auto; /* Permitir scroll si el formulario es muy largo */
-  /* --------------------------------- */
+  position: sticky; 
+  top: 12px; 
+  width: 360px; 
+  max-height: calc(100vh - 24px); 
+  overflow-y: auto; 
+
 }
 
 #list-section {
@@ -115,9 +113,8 @@ main.container {
   padding: 16px;
   border-radius: var(--radius);
   box-shadow: 0 1px 4px rgba(2, 6, 23, 0.04);
-  /* --- Cambio para que la lista ocupe el espacio restante --- */
   flex-grow: 1; 
-  /* -------------------------------------------------------- */
+
 }
 
 
@@ -263,16 +260,15 @@ form select:focus {
   font-size: 0.9rem;
 }
 @media (max-width:900px) {
-  /* Restablecer el diseño original para dispositivos pequeños */
   main.container {
     grid-template-columns: 1fr;
-    display: grid; /* Volver a grid en móviles */
+    display: grid; 
     padding-bottom: 32px
   }
 
   #form-section {
     order: 2;
-    position: static; /* Quitar sticky en móviles */
+    position: static;
     width: auto;
     max-height: none;
     overflow-y: visible;
