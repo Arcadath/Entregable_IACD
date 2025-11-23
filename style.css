@@ -1,14 +1,15 @@
 :root {
-  --bg: #ecfdf5;          
+  --bg: #ecfdf5;
   --card: #ffffff;
-  --accent: #059669;      
-  --accent-dark: #047857; 
+  --accent: #059669;
+  --accent-dark: #047857;
   --muted: #6b7280;
-  --border: #d1fae5;      
+  --border: #d1fae5;
   --radius: 8px;
   --gap: 16px;
   --font-main: system-ui, sans-serif;
 }
+
 body {
   margin: 0;
   background: var(--bg);
@@ -17,28 +18,34 @@ body {
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
 }
+
 * {
   box-sizing: border-box;
 }
+
 .btn,
 input,
 select,
 .inventory-item {
   transition: all 0.2s ease;
 }
+
 .container {
   max-width: 1200px;
   width: 95%;
   margin: 0 auto;
 }
+
 /* Header */
 .header-inner {
   padding: 15px 0;
 }
+
 .title {
   margin: 15px 0;
   color: var(--accent);
 }
+
 /* Botones */
 .btn {
   background: transparent;
@@ -49,21 +56,26 @@ select,
   cursor: pointer;
   font-weight: 500;
 }
+
 .btn:hover {
   opacity: 0.85;
 }
+
 .btn:active {
   transform: scale(0.98);
 }
+
 .btn.primary {
   background: var(--accent);
   color: #fff;
 }
+
 .btn.primary:hover {
   background: var(--accent-dark);
   border-color: var(--accent-dark);
   opacity: 1;
 }
+
 /* Layout Principal */
 main.container {
   display: flex;
@@ -71,6 +83,7 @@ main.container {
   margin-top: 12px;
   align-items: start;
 }
+
 /* Secciones */
 #form-section,
 #list-section {
@@ -79,6 +92,7 @@ main.container {
   border-radius: var(--radius);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+
 #form-section {
   position: sticky;
   top: 12px;
@@ -87,21 +101,25 @@ main.container {
   max-height: calc(100vh - 24px);
   overflow-y: auto;
 }
+
 #list-section {
   flex-grow: 1;
 }
+
 /* Formulario */
 #form-section h2 {
   margin-top: 0;
   color: var(--accent);
   font-size: 1.1rem;
 }
+
 form label {
   display: block;
   font-size: 0.9rem;
   margin-bottom: 10px;
   font-weight: 500;
 }
+
 form input,
 form select {
   width: 100%;
@@ -111,17 +129,20 @@ form select {
   background: #fff;
   margin-top: 4px;
 }
+
 form input:focus,
 form select:focus {
   border-color: var(--accent);
   outline: none;
   grid: 2px solid var(--accent);
 }
+
 .form-actions {
   display: flex;
   gap: 8px;
   margin-top: 16px;
 }
+
 /* Controles de Lista */
 .list-controls {
   display: flex;
@@ -131,17 +152,21 @@ form select:focus {
   gap: 12px;
   flex-wrap: wrap;
 }
+
 .search-group {
   display: flex;
   gap: 8px;
   flex: 1;
 }
+
 .search-group input {
   flex: 2;
 }
+
 .search-group select {
   flex: 1;
 }
+
 /* Lista e Items */
 .inventory-list {
   list-style: none;
@@ -151,6 +176,7 @@ form select:focus {
   flex-direction: column;
   gap: 8px;
 }
+
 .inventory-item {
   display: flex;
   justify-content: space-between;
@@ -159,24 +185,29 @@ form select:focus {
   border-radius: 8px;
   border: 1px solid #f3f4f6;
 }
+
 .inventory-item:hover {
   border-color: #dbeafe;
   background-color: #f9fafb;
 }
+
 .item-left .item-name {
   font-weight: 600;
   color: #1f2937;
 }
+
 .item-sub {
   font-size: 0.85rem;
   color: var(--muted);
   margin-top: 2px;
 }
+
 .item-right {
   display: flex;
   gap: 8px;
   align-items: center;
 }
+
 .badge {
   background: #e0e7ff;
   color: var(--accent-dark);
@@ -185,6 +216,7 @@ form select:focus {
   font-size: 0.8rem;
   font-weight: 600;
 }
+
 .small-btn {
   background: #fff;
   border: 1px solid var(--border);
@@ -194,11 +226,13 @@ form select:focus {
   color: var(--muted);
   font-size: 0.8rem;
 }
+
 .small-btn:hover {
   color: var(--accent);
   border-color: var(--accent);
   background: #eff6ff;
 }
+
 /* Footer */
 .footer-content {
   text-align: center;
@@ -206,30 +240,36 @@ form select:focus {
   color: var(--muted);
   font-size: 0.85rem;
 }
+
 /* Responsive */
 @media (max-width: 768px) {
   main.container {
     flex-direction: column;
   }
+
   #form-section {
     position: static;
     width: 100%;
     max-height: none;
     order: 2;
   }
+
   #list-section {
     width: 100%;
     order: 1;
   }
+
   .list-controls {
     flex-direction: column;
     align-items: stretch;
   }
+
   .inventory-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
+
   .item-right {
     width: 100%;
     justify-content: space-between;
@@ -238,17 +278,28 @@ form select:focus {
     border-top: 1px dashed var(--border);
   }
 }
+
 /* Estilos para errores de validación */
 .input-error {
-  border-color: #ef4444 !important; 
-  background-color: #fef2f2 !important; 
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2); 
+  border-color: #ef4444 !important;
+  background-color: #fef2f2 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
   animation: shake 0.3s ease-in-out;
 }
 
 /* Animación de vibración */
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
 }

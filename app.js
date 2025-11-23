@@ -35,8 +35,8 @@ function loadInventory() {
   try {
     const storedData = localStorage.getItem(STORAGE_KEY);
     if (storedData) return JSON.parse(storedData);
-  } catch (error) { 
-    console.error(error); 
+  } catch (error) {
+    console.error(error);
   }
   return getInitialSeed();
 }
@@ -49,7 +49,7 @@ function saveInventory(listToSave) {
 // Renderiza la lista de inventario filtrada en el DOM
 function renderInventory() {
   const filteredInventory = getFilteredInventory();
-  const fragment = document.createDocumentFragment(); 
+  const fragment = document.createDocumentFragment();
   domSelectors.inventoryListElement.innerHTML = '';
 
   if (filteredInventory.length === 0) {
