@@ -1,5 +1,5 @@
 // Inventario - app.js (Versión Final Optimizada y Corregida)
-const STORAGE_KEY = 'inventario_facil_v1';
+const STORAGE_KEY = 'gestor_inventario_data';
 
 // Selectores de elementos del DOM
 const domSelectors = {
