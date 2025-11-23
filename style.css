@@ -1,13 +1,13 @@
 :root {
-  --bg: #f5f7fb;
+  --bg: #ecfdf5;          
   --card: #ffffff;
-  --accent: #0b5cff;
-  --accent-dark: #004ac9;
+  --accent: #059669;      
+  --accent-dark: #047857; 
   --muted: #6b7280;
-  --border: #e5e7eb;
+  --border: #d1fae5;      
   --radius: 8px;
   --gap: 16px;
-  --font-main: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-main: system-ui, sans-serif;
 }
 body {
   margin: 0;
@@ -20,7 +20,6 @@ body {
 * {
   box-sizing: border-box;
 }
-/* Optimización: Transiciones solo donde son necesarias */
 .btn,
 input,
 select,
@@ -116,7 +115,7 @@ form input:focus,
 form select:focus {
   border-color: var(--accent);
   outline: none;
-  ring: 2px solid var(--accent);
+  grid: 2px solid var(--accent);
 }
 .form-actions {
   display: flex;
@@ -238,4 +237,18 @@ form select:focus {
     padding-top: 8px;
     border-top: 1px dashed var(--border);
   }
+}
+/* Estilos para errores de validación */
+.input-error {
+  border-color: #ef4444 !important; 
+  background-color: #fef2f2 !important; 
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2); 
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Animación de vibración */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
 }

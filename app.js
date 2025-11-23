@@ -223,13 +223,13 @@ function saveAndRender() {
   renderInventory();
 }
 
-// Escapa caracteres especiales en texto HTML
+// Previene inyecciones HTML
 function escapeHtml(text) {
   if (!text) return '';
   return text.replace(/[&<>"']/g, match => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[match]));
 }
 
-// Muestra un mensaje en consola (puedes implementar alerta visual)
+// Muestra un mensaje en consola
 function showToast(message) {
   console.log('Sistema:', message);
 }
