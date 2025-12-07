@@ -1,115 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Sistema de gestión de inventario simple y rápido.">
-  <title>Gestor de Inventario</title>
-  <link rel="stylesheet" href="style.css" />
-  <script type="module" src="app.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso - Gestor de Inventario</title>
+    <link rel="stylesheet" href="login.css">
+    <script type="module" src="login.js"></script>
 </head>
 
 <body>
-  <header>
-    <div class="container header-inner">
-      <div class="header-user-section">
-        <h1 class="title">Gestor</h1>
 
-        <div id="user-profile" class="user-profile">
-          <img id="user-photo" src="" alt="Foto de usuario" class="user-photo">
-          <span id="user-name" class="user-name">Cargando...</span>
+    <div class="login-container">
+        <div class="login-card">
+            <h1 class="brand-title" id="form-title">Iniciar Sesión</h1>
+            <p class="subtitle">Administra tu inventario fácilmente</p>
+
+            <form id="email-form" class="auth-form">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Contraseña" required minlength="6">
+                </div>
+
+                <div id="error-msg" class="error-message" style="display: none;"></div>
+
+                <button type="submit" id="submit-btn" class="btn-primary">Entrar</button>
+            </form>
+
+            <div class="divider">
+                <span>o continúa con</span>
+            </div>
+
+            <button id="google-login-btn" class="google-btn">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="G">
+                Google
+            </button>
+
+            <div class="toggle-auth">
+                <p id="toggle-text">¿No tienes cuenta? <a href="#" id="toggle-link">Regístrate aquí</a></p>
+            </div>
         </div>
-      </div>
-
-      <div class="admin-controls">
-        <button id="btn-logout" class="btn btn-logout">
-          Cerrar Sesión
-        </button>
-
-        <button id="btn-backup" class="btn botonRespaldar">
-          Respaldar
-        </button>
-
-        <label for="file-restore" class="btn botonRestaurar">
-          Restaurar
-        </label>
-        <input type="file" id="file-restore" accept=".json" />
-      </div>
     </div>
-  </header>
-
-  <main class="container">
-    <section id="form-section" aria-labelledby="form-title">
-      <h2 id="form-title">Agregar / Editar Item</h2>
-      <form id="item-form" novalidate>
-        <input type="hidden" id="item-id" />
-        <label>
-          Nombre
-          <input type="text" id="name" name="name" required maxlength="100" autocomplete="off" />
-        </label>
-        <label>
-          Categoría
-          <select id="category" name="category" required>
-            <option value="">Seleccione</option>
-            <option>Electrónica</option>
-            <option>Ropa</option>
-            <option>Hogar</option>
-            <option>Oficina</option>
-            <option>Otros</option>
-          </select>
-        </label>
-        <label>
-          Cantidad
-          <input type="number" id="quantity" name="quantity" required min="0" />
-        </label>
-        <label>
-          Precio unitario (MXN)
-          <input type="number" id="price" name="price" required min="0" step="0.01" />
-        </label>
-        <label>
-          Proveedor (email)
-          <input type="email" id="supplierEmail" name="supplierEmail" required />
-        </label>
-        <label>
-          Fecha de entrada
-          <input type="date" id="dateIn" name="dateIn" required />
-        </label>
-        <div class="form-actions">
-          <button type="submit" class="btn botonRespaldar">Guardar</button>
-          <button type="button" id="reset-btn" class="btn botonRestaurar">Cancelar</button>
-        </div>
-      </form>
-    </section>
-
-    <section id="list-section" aria-labelledby="list-title">
-      <div class="list-controls">
-        <div class="search-group">
-          <input type="search" id="search" placeholder="Buscar por nombre..." aria-label="Buscar items" />
-          <select id="filter-category" aria-label="Filtrar por categoría">
-            <option value="">Todas las categorías</option>
-            <option>Electrónica</option>
-            <option>Ropa</option>
-            <option>Hogar</option>
-            <option>Oficina</option>
-            <option>Otros</option>
-          </select>
-        </div>
-        <div class="summary">
-          <span id="total-items">0 ítems</span>
-          <span id="total-value">Valor total: $0.00</span>
-        </div>
-      </div>
-
-      <ul id="inventory-list" class="inventory-list" aria-live="polite"></ul>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <small>Inventario Empresa Ficticia — Proyecto demo · 2025</small>
-    </div>
-  </footer>
 </body>
 
 </html>

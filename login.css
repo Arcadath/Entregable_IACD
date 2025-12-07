@@ -8,13 +8,16 @@
 
 body {
     margin: 0;
-    padding: 0;
+    padding: 20px;
     background-color: var(--bg);
     font-family: system-ui, -apple-system, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+    box-sizing: border-box;
+    
 }
 
 .login-card {
@@ -117,7 +120,7 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #047857; /* accent-dark */
+    background-color: #047857; 
 }
 
 /* Divisor Visual */
@@ -168,4 +171,36 @@ body {
     margin-bottom: 15px;
     border: 1px solid #fee2e2;
     text-align: left;
+}
+/* Responsividad para telefonos*/
+@media (max-width:480px){
+    .login-card{
+        padding: 1.5rem;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .brand-title{
+        font-size: 1.25rem;
+    }
+    .subtitle{
+        font-size: 1.5rem;
+    }
+    .input-group input{
+        font-size: 16px;
+        padding: 14px;
+    }
+    .btn-primary, .google-btn{
+        padding: 14px;
+    }
+}
+/* Ajustes para pantallas horizontales*/
+@media (max-height:600px){
+    body{
+        align-items: flex-start;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .login-card{
+        margin-top: 0;
+    }
 }
