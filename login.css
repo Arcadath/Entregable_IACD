@@ -1,0 +1,171 @@
+:root {
+    --bg: #ecfdf5;
+    --accent: #059669;
+    --card: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    font-family: system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-card {
+    background: var(--card);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    width: 100%;
+    max-width: 340px;
+    border: 1px solid #d1fae5;
+}
+
+.brand-title {
+    color: var(--accent);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    background: #fff;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.google-btn:hover {
+    background-color: #f9fafb;
+    border-color: #9ca3af;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.google-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-text {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+/* --- AÑADIR O REEMPLAZAR EN login.css --- */
+
+/* Formulario */
+.auth-form {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.input-group {
+    margin-bottom: 12px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Importante para padding interno */
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+/* Botón Principal (Login/Registro) */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #047857; /* accent-dark */
+}
+
+/* Divisor Visual */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.divider span {
+    padding: 0 10px;
+}
+
+/* Link de Toggle */
+.toggle-auth {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.toggle-auth a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.toggle-auth a:hover {
+    text-decoration: underline;
+}
+
+/* Mensajes de Error */
+.error-message {
+    background-color: #fef2f2;
+    color: #ef4444;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    border: 1px solid #fee2e2;
+    text-align: left;
+}
